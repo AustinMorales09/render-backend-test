@@ -1,19 +1,23 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const Pet = require('./models/Pets');
-const cors = require('cors')
+ require('dotenv').config();
+const cors = require('cors');
+console.log(process.env.PORT)
+
 // Initialize Express
 const app = express();
 const port = 5500;
-
+const mongoUri = process.env.MONGODB_URI;
 // Middleware for JSON parsing
 app.use(express.json());
 app.use(cors({
     origin: 'http://localhost:3000',  // Replace with your frontend origin
  
 }));
+console.log(process.env.MONGODB_URI)
 // Connect to MongoDB (replace with your own connection string)
-mongoose.connect('mongodb+srv://test:Kable123@cluster0.mlagjiq.mongodb.net/', {
+mongoose.connect(mongoUri, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
