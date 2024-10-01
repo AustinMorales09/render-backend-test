@@ -12,7 +12,7 @@ const mongoUri = process.env.MONGODB_URI;
 // Middleware for JSON parsing
 app.use(express.json());
 app.use(cors({
-    origin: 'https://rendertest-mjrb.onrender.com/',  // Replace with your frontend origin
+    origin: 'https://rendertest-mjrb.onrender.com',  // Replace with your frontend origin
  
 }));
 console.log(process.env.MONGODB_URI)
